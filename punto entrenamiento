@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUNTO ENTRENAMIENTO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            height: 100%;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .motivational-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.1;
+            font-size: 10px;
+            line-height: 1.2;
+        }
+        .motivational-bg span {
+            padding: 5px;
+        }
+        .logo-container {
+            position: relative;
+            z-index: 1;
+        }
+        .logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+        h1 {
+            margin: 20px 0 0;
+            font-size: 2.5em;
+        }
+        .highlight-punto {
+            color: #b5ff2b;
+        }
+        .highlight-entrenamiento {
+            color: #81b817;
+        }
+        .section {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .location {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: -20px;
+        }
+        .schedule {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .class-type {
+            flex-basis: 100%;
+            margin-bottom: 20px;
+        }
+        .day {
+            flex-basis: calc(20% - 20px);
+            margin: 10px;
+            background-color: #81b817;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .social-button, .start-button, .email-button {
+            display: inline-block;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .social-button, .email-button {
+            background-color: #000;
+        }
+        .social-button:hover, .email-button:hover {
+            background-color: #81b817;
+        }
+        .location-link {
+            color: #81b817;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .location-link:hover {
+            text-decoration: underline;
+        }
+        .start-screen {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        .main-content {
+            display: none;
+        }
+        .staff-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .staff-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .contact-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .start-button {
+            animation: pulse 2s infinite;
+            background-color: #81b817;
+            width: 300px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+        .start-button:hover {
+            background-color: #b5ff2b;
+        }
+        .contact-buttons {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="start-screen" id="startScreen">
+        <img src="logo.jpg" alt="PUNTO ENTRENAMIENTO logo" class="logo">
+        <button class="start-button" onclick="showMainContent()">PUNTO ENTRENAMIENTO</button>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <header>
+            <div class="motivational-bg">
+                <span>Supera tus límites</span>
+                <span>Transforma tu cuerpo</span>
+                <span>Alcanza tus metas</span>
+                <span>Vive saludable</span>
+                <span>Entrena con pasión</span>
+                <span>Nunca te rindas</span>
+            </div>
+            <div class="logo-container">
+                <img src="logo.jpg" alt="PUNTO ENTRENAMIENTO logo" class="logo">
+                <h1><span class="highlight-punto">PUNTO</span> <span class="highlight-entrenamiento">ENTRENAMIENTO</span></h1>
+            </div>
+        </header>
+        
+        <div class="location">
+            📍 <a href="https://www.google.com.ar/maps/place/Punto+entrenamiento/@-38.5577601,-58.7344749,18.04z/data=!4m6!3m5!1s0x958f97007c306ba9:0x2575b65381766447!8m2!3d-38.5578807!4d-58.7335!16s%2Fg%2F11y49vjqvq?entry=ttu" class="location-link" target="_blank">Calle 48 2841, Necochea</a>
+        </div>
+
+        <div class="container">
+            <div class="section staff-section">
+                <img src="luu.jpg="Lucrecia Schuenemann" class="staff-photo">
+                <h2>Staff: <span class="highlight-entrenamiento">Lucrecia Schuenemann</span></h2>
+            </div>
+            
+            <div class="section">
+                <h2>Horarios de agosto</h2>
+                
+                <div class="class-type">
+                    <h3>Entrenamiento</h3>
+                    <div class="schedule">
+                        <div class="day">
+                            <h4>Lunes</h4>
+                            <p>7HS 8HS<br>19:10HS, 20HS</p>
+                        </div>
+                        <div class="day">
+                            <h4>Martes</h4>
+                            <p>18HS 19HS<br>20HS</p>
+                        </div>
+                        <div class="day">
+                            <h4>Miércoles</h4>
+                            <p>7HS 8HS 14HS<br>19:10HS 20HS</p>
+                        </div>
+                        <div class="day">
+                            <h4>Jueves</h4>
+                            <p>18HS 19HS<br>20HS</p>
+                        </div>
+                        <div class="day">
+                            <h4>Viernes</h4>
+                            <p>7HS 8HS 14HS<br>19:10HS 20HS</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="class-type">
+                    <h3>Postural</h3>
+                    <div class="schedule">
+                        <div class="day">
+                            <h4>Lunes</h4>
+                            <p>17:10HS</p>
+                        </div>
+                        <div class="day">
+                            <h4>Viernes</h4>
+                            <p>17:10HS</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="class-type">
+                    <h3>Yoga</h3>
+                    <div class="schedule">
+                        <div class="day">
+                            <h4>Martes</h4>
+                            <p>14:00HS</p>
+                        </div>
+                        <div class="day">
+                            <h4>Jueves</h4>
+                            <p>14:00HS</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="class-type">
+                    <h3>Stretching</h3>
+                    <div class="schedule">
+                        <div class="day">
+                            <h4>Lunes</h4>
+                            <p>18:10HS</p>
+                        </div>
+                        <div class="day">
+                            <h4>Miércoles</h4>
+                            <p>18:10HS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h2>Contacto</h2>
+            <div class="contact-buttons">
+                <a href="https://www.instagram.com/punto.entrenamiento/" class="social-button" target="_blank">
+                    Instagram
+                </a>
+                <a href="mailto:puntoentrenamiento@gmail.com" class="email-button">
+                    Gmail
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showMainContent() {
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
